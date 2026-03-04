@@ -1,23 +1,37 @@
-@base <https://example.org/Julia>.
-@prefix ex: <https://example.org/> .
+@base <https://example.org/Julia> .
+@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix wd: <https://www.wikidata.org/wiki/> .
 
-<#me> a ex:Person, ex:Student ;
-    ex:name "Julia Paranich"^^xsd:string ;
-    ex:location <https://www.wikidata.org/wiki/Q1764> ;
-    ex:likes <https://example.org/badminton> ;
-    ex:hasCondition <https://example.org/torn_acl> ;
-    ex:worksAt <https://www.wikidata.org/wiki/Q15881312>;
-    ex:knows  [ ex:name "Tian Tang"],
-              <https://www.wikidata.org/wiki/Q66736299>;
-    ex:goesToRailwayStationWith <https://www.wikidata.org/wiki/Q76645490> .
+<#me> a foaf:Person , ex:Student ;
+    foaf:firstName "Julia" ;
+    foaf:familyName "Paranich" ;
+    ex:location wd:Q1764 ;
+    ex:likes ex:badminton ;
+    ex:hasCondition ex:torn_acl ;
+    ex:worksAt wd:Q15881312 ;
+    foaf:knows [
+        a foaf:Person ;
+        foaf:firstName "Tian" ;
+        foaf:familyName "Tang"
+    ],
+    wd:Q66736299 ;
+    ex:goesToRailwayStationWith wd:Q76645490 .
 
-<https://www.wikidata.org/wiki/Q76645490> a ex:Person, ex:Student;
-    ex:name "Seppe Santens"^^xsd:string .
+wd:Q76645490 a foaf:Person , ex:Student ;
+    foaf:firstName "Seppe" ;
+    foaf:familyName "Santens" .
 
-<https://www.wikidata.org/wiki/Q1764> a ex:City ;
-        ex:name "Рейкьявік"@ua ;
-        ex:surface "244 km2" .
+wd:Q1764 a ex:City ;
+    rdfs:label "Рейкьявік"@ua ;
+    ex:surface "244"^^xsd:decimal .
 
-<https://www.wikidata.org/wiki/Q15881312> a ex:Organization;
-    ex:name "Rijksdienst voor Ondernemend Nederland"@nl.
+wd:Q15881312 a foaf:Organization ;
+    rdfs:label "Rijksdienst voor Ondernemend Nederland"@nl .
+
+ex:badminton a ex:Activity ;
+    rdfs:label "Badminton"@en .
+
+ex:torn_acl a ex:MedicalCondition ;
+    rdfs:label "Torn ACL"@en .

@@ -1,13 +1,17 @@
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
 @prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
 
 #################################################################
 # Classes
 #################################################################
 
-ex:Person a rdfs:Class ;
+foaf:Person a rdfs:Class ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
@@ -20,7 +24,7 @@ ex:City a rdfs:Class ;
     rdfs:label "City"@en ;
     rdfs:comment "A large human settlement."@en .
 
-ex:Organization a rdfs:Class ;
+foaf:Organization a rdfs:Class ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organization such as a company or government institution."@en .
 
@@ -36,10 +40,16 @@ ex:MedicalCondition a rdfs:Class ;
 # Properties
 #################################################################
 
-ex:name a rdf:Property ;
-    rdfs:label "name"@en ;
-    rdfs:comment "The name of a person, organization, or place."@en ;
-    rdfs:domain rdfs:Resource ;
+foaf:firstName a rdf:Property ;
+    rdfs:label "first name"@en ;
+    rdfs:comment "The first name of a person."@en ;
+    rdfs:domain foaf:Person ;
+    rdfs:range xsd:string .
+
+foaf:familyName a rdf:Property ;
+    rdfs:label "family name"@en ;
+    rdfs:comment "The family name of a person."@en ;
+    rdfs:domain foaf:Person ;
     rdfs:range xsd:string .
 
 ex:location a rdf:Property ;
@@ -66,9 +76,11 @@ ex:worksAt a rdf:Property ;
     rdfs:domain ex:Person ;
     rdfs:range ex:Organization .
 
-ex:knows a rdf:Property ;
+foaf:knows a rdf:Property ;
     rdfs:label "knows"@en ;
+    rdfs:label "kent"@nl ;
     rdfs:comment "Indicates a person known by another person."@en ;
+    rdfs:comment "Вказує на людину, яку знає інша людина."@ua ;
     rdfs:domain ex:Person ;
     rdfs:range ex:Person .
 
