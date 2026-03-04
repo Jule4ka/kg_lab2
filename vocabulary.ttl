@@ -11,7 +11,8 @@
 # Classes
 #################################################################
 
-foaf:Person a rdfs:Class ;
+ex:Person a rdfs:Class ;
+    rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en ;
     rdfs:comment "A human being."@en .
 
@@ -24,7 +25,8 @@ ex:City a rdfs:Class ;
     rdfs:label "City"@en ;
     rdfs:comment "A large human settlement."@en .
 
-foaf:Organization a rdfs:Class ;
+ex:Organization a rdfs:Class ;
+    rdfs:subClassOf foaf:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organization such as a company or government institution."@en .
 

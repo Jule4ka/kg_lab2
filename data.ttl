@@ -1,8 +1,9 @@
-@base <https://example.org/Julia> .
+@base <https://jule4ka.github.io/kg_lab2/> .
 @prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wd: <https://www.wikidata.org/wiki/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <#me> a foaf:Person , ex:Student ;
     foaf:firstName "Julia" ;
@@ -11,20 +12,19 @@
     ex:likes ex:badminton ;
     ex:hasCondition ex:torn_acl ;
     ex:worksAt wd:Q15881312 ;
-    foaf:knows [
-        a foaf:Person ;
-        foaf:firstName "Tian" ;
-        foaf:familyName "Tang"
-    ],
-    wd:Q66736299 ;
+    foaf:knows <#TianTang> , wd:Q66736299 ;
     ex:goesToRailwayStationWith wd:Q76645490 .
+
+<#TianTang> a foaf:Person ;
+    foaf:firstName "Tian" ;
+    foaf:familyName "Tang" .
 
 wd:Q76645490 a foaf:Person , ex:Student ;
     foaf:firstName "Seppe" ;
     foaf:familyName "Santens" .
 
 wd:Q1764 a ex:City ;
-    rdfs:label "Рейкьявік"@ua ;
+    rdfs:label "Рейкьявік"@uk ;
     ex:surface "244"^^xsd:decimal .
 
 wd:Q15881312 a foaf:Organization ;
