@@ -1,0 +1,23 @@
+@base <https://example.org/Julia>.
+@prefix ex: <https://example.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<#me> a ex:Person, ex:Student ;
+    ex:name "Julia Paranich"^^xsd:string ;
+    ex:location <https://www.wikidata.org/wiki/Q1764> ;
+    ex:likes <https://example.org/badminton> ;
+    ex:hasCondition <https://example.org/torn_acl> ;
+    ex:worksAt <https://www.wikidata.org/wiki/Q15881312>;
+    ex:knows  [ ex:name "Tian Tang"],
+              <https://www.wikidata.org/wiki/Q66736299>;
+    ex:goesToRailwayStationWith <https://www.wikidata.org/wiki/Q76645490> .
+
+<https://www.wikidata.org/wiki/Q76645490> a ex:Person, ex:Student;
+    ex:name "Seppe Santens"^^xsd:string .
+
+<https://www.wikidata.org/wiki/Q1764> a ex:City ;
+        ex:name "Рейкьявік"@ua ;
+        ex:surface "244 km2" .
+
+<https://www.wikidata.org/wiki/Q15881312> a ex:Organization;
+    ex:name "Rijksdienst voor Ondernemend Nederland"@nl.

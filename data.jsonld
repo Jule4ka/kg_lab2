@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "ex":"https://example.org/",
+     "knows": {
+            "id": "ex:knows",
+            "type": "@id"
+        },
+    "goesToRailwayStationWith": {
+    "id": "ex:goesToRailwayStationWith",
+    "type": "@id"}
+  }, 
+  	"@id": "ex:Julia",
+    "@type": ["ex:Person", "ex:Student"],
+    "ex:name": {"@value": "Julia Paranich", "@language": "en", "@type": "xsd:string"},
+    "ex:location": {
+        "@id": "https://www.wikidata.org/wiki/Q1764",
+        "@type": "ex:City",
+      "ex:name": {"@value": "Рейкьявік", "@language": "ua"}},
+    "ex:likes": "https://example.org/badminton",   
+    "ex:hasCondition": "https://example.org/torn_acl",
+    "ex:worksAt": 
+        {"@id": "https://www.wikidata.org/wiki/Q15881312",
+        "@type": "ex:Organization",
+        "@name": {"@value": "Rijksdienst voor Ondernemend Nederland", "@language": "nl"}
+        },
+     "knows": [
+        {"ex:name": "Tian Tang"},
+        "https://www.wikidata.org/wiki/Q66736299" ],
+  "goesToRailwayStationWith": {
+    "@id": "https://www.wikidata.org/wiki/Q76645490", "ex:type": ["ex:Person", "ex:Student"], "ex:name": "Seppe Santens"}
+}

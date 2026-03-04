@@ -1,0 +1,85 @@
+@prefix ex: <https://example.org/vocab/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#################################################################
+# Classes
+#################################################################
+
+ex:Person a rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "A human being."@en .
+
+ex:Student a rdfs:Class ;
+    rdfs:subClassOf ex:Person ;
+    rdfs:label "Student"@en ;
+    rdfs:comment "A person who is enrolled in an educational institution."@en .
+
+ex:City a rdfs:Class ;
+    rdfs:label "City"@en ;
+    rdfs:comment "A large human settlement."@en .
+
+ex:Organization a rdfs:Class ;
+    rdfs:label "Organization"@en ;
+    rdfs:comment "An organization such as a company or government institution."@en .
+
+ex:Activity a rdfs:Class ;
+    rdfs:label "Activity"@en ;
+    rdfs:comment "An activity that a person can like or practice."@en .
+
+ex:MedicalCondition a rdfs:Class ;
+    rdfs:label "Medical condition"@en ;
+    rdfs:comment "A health-related condition affecting a person."@en .
+
+#################################################################
+# Properties
+#################################################################
+
+ex:name a rdf:Property ;
+    rdfs:label "name"@en ;
+    rdfs:comment "The name of a person, organization, or place."@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range xsd:string .
+
+ex:location a rdf:Property ;
+    rdfs:label "location"@en ;
+    rdfs:comment "Indicates the city where a person is located."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:City .
+
+ex:likes a rdf:Property ;
+    rdfs:label "likes"@en ;
+    rdfs:comment "Indicates an activity that a person likes."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:Activity .
+
+ex:hasCondition a rdf:Property ;
+    rdfs:label "has medical condition"@en ;
+    rdfs:comment "Relates a person to a medical condition."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:MedicalCondition .
+
+ex:worksAt a rdf:Property ;
+    rdfs:label "works at"@en ;
+    rdfs:comment "Relates a person to the organization where they work."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:Organization .
+
+ex:knows a rdf:Property ;
+    rdfs:label "knows"@en ;
+    rdfs:comment "Indicates a person known by another person."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:Person .
+
+ex:goesToRailwayStationWith a rdf:Property ;
+    rdfs:label "goes to railway station with"@en ;
+    rdfs:comment "Indicates a person with whom someone goes to the railway station."@en ;
+    rdfs:domain ex:Person ;
+    rdfs:range ex:Person .
+
+ex:surface a rdf:Property ;
+    rdfs:label "surface area"@en ;
+    rdfs:comment "The surface area of a city expressed in square kilometers."@en ;
+    rdfs:domain ex:City ;
+    rdfs:range xsd:decimal .
