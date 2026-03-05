@@ -24,7 +24,7 @@ wd:Q76645490 a foaf:Person , ex:Student ;
     foaf:familyName "Santens" .
 
 wd:Q1764 a ex:City ;
-    rdfs:label "Рейкьявік"@uk ;
+    rdfs:label "Reykjavik"@en-gb;
     ex:surface "244"^^xsd:decimal .
 
 wd:Q15881312 a foaf:Organization ;
