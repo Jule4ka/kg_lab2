@@ -1,5 +1,5 @@
 @base <https://jule4ka.github.io/kg_lab2/> .
-@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary.ttl#> .
+@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wd: <https://www.wikidata.org/wiki/> .
