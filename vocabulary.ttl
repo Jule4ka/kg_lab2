@@ -1,11 +1,12 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary#> .
+@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary.ttl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
 #################################################################
 # Classes
 #################################################################
@@ -19,6 +20,11 @@ ex:Student a rdfs:Class ;
     rdfs:subClassOf ex:Person ;
     rdfs:label "Student"@en ;
     rdfs:comment "A person who is enrolled in an educational institution."@en .
+
+lab:Course a rdfs:Class ;
+    rdfs:label "Course" ;
+    rdfs:comment "A course offered at an educational institution." .
+
 
 ex:City a rdfs:Class ;
     rdfs:label "City"@en ;
@@ -36,6 +42,7 @@ ex:Activity a rdfs:Class ;
 ex:MedicalCondition a rdfs:Class ;
     rdfs:label "Medical condition"@en ;
     rdfs:comment "A health-related condition affecting a person."@en .
+
 
 #################################################################
 # Properties
@@ -96,3 +103,16 @@ ex:surface a rdf:Property ;
     rdfs:comment "The surface area of a city expressed in square kilometers."@en ;
     rdfs:domain ex:City ;
     rdfs:range xsd:decimal .
+
+
+lab:seeAlso a rdf:Property ;
+    rdfs:label "see also" ;
+    rdfs:comment "Relates a resource to another resource that describes the same thing." ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Resource .
+
+lab:enrolledIn a rdf:Property ;
+    rdfs:label "enrolled in" ;
+    rdfs:comment "Relates a person to a course they are enrolled in." ;
+    rdfs:domain lab:Person ;
+    rdfs:range lab:Course .

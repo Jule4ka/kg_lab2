@@ -35,3 +35,7 @@ ex:badminton a ex:Activity ;
 
 ex:torn_acl a ex:MedicalCondition ;
     rdfs:label "Torn ACL"@en .
+
+:knowledge-graphs-2025 a lab:Course ;
+    lab:name "Knowledge Graphs 2025" ;
+    lab:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
