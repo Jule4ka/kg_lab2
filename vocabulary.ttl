@@ -104,6 +104,12 @@ ex:surface a rdf:Property ;
     rdfs:domain ex:City ;
     rdfs:range xsd:decimal .
 
+ex:name a rdf:Property ;
+    rdfs:label "name" ;
+    rdfs:comment "The name of a something." ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range rdfs:Literal ;
+    owl:equivalentProperty schema:name .
 
 ex:seeAlso a rdf:Property ;
     rdfs:label "see also" ;

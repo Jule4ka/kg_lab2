@@ -1,13 +1,16 @@
 @base <https://jule4ka.github.io/kg_lab2/data.ttl> .
 @prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary.ttl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix wd: <https://www.wikidata.org/entity#> .
+@prefix wd: <https://www.wikidata.org/wiki/#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <#me> a foaf:Person , ex:Student ;
     foaf:firstName "Julia" ;
     foaf:familyName "Paranich" ;
+    schema:name "Julia Paranich" ;
+    foaf:name "Julia Paranich";
     ex:location wd:Q1764 ;
     ex:likes ex:badminton ;
     ex:hasCondition ex:torn_acl ;
@@ -36,6 +39,6 @@ ex:badminton a ex:Activity ;
 ex:torn_acl a ex:MedicalCondition ;
     rdfs:label "Torn ACL"@en .
 
-:knowledge-graphs-2025 a lab:Course ;
-    lab:name "Knowledge Graphs 2025" ;
-    lab:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
+:knowledge-graphs-2025 a ex:Course ;
+    ex:name "Knowledge Graphs 2025" ;
+    ex:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
