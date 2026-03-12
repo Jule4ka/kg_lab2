@@ -25,10 +25,9 @@
             <https://daniel1402.github.io/knowledge-graphs-labs/data.ttl#me> ,
             <https://pikajojo.github.io/Knowledge_Graph_UGent_Lab2/data.ttl#me> ,
             <https://tabulas.eu/ward/profile.ttl#me>,
-            <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl#me>
-        ;
-
-
+            <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl#me>,
+            <https://tiantangvanhoecke.github.io/KG_Lab2/data.ttl#me>,
+            <https://anyplin.github.io/Knowledge-Graphs/data.ttl#Anna>     ;
     ex:goesToRailwayStationWith wd:Q76645490 .
 
 <#TianTang> a foaf:Person ;
