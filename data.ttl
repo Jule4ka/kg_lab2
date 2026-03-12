@@ -16,7 +16,7 @@
     ex:hasCondition ex:torn_acl ;
     ex:worksAt wd:Q15881312 ;
     ex:enrolledIn <#knowledge-graphs-2025> ;
-    foaf:knows :TianTang , wd:Q66736299,
+    foaf:knows <#TianTang> , wd:Q66736299,
             <https://hannevanoutrive.github.io/knowledge_graphs/data.ttl#vanoutrive_hanne> ,
             <https://federickds.github.io/knowledge_graphs/data.ttl#me> ,
             <https://lander6.github.io/knowledge-graph-assignment/data.ttl#Lander> ,
@@ -30,7 +30,7 @@
             <https://anyplin.github.io/Knowledge-Graphs/data.ttl#Anna>     ;
     ex:goesToRailwayStationWith wd:Q76645490 .
 
-:TianTang a foaf:Person ;
+<#TianTang> a foaf:Person ;
     foaf:firstName "Tian" ;
     foaf:familyName "Tang" .
 
