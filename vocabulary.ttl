@@ -105,13 +105,13 @@ ex:surface a rdf:Property ;
     rdfs:range xsd:decimal .
 
 
-lab:seeAlso a rdf:Property ;
+ex:seeAlso a rdf:Property ;
     rdfs:label "see also" ;
     rdfs:comment "Relates a resource to another resource that describes the same thing." ;
     rdfs:domain rdfs:Resource ;
     rdfs:range rdfs:Resource .
 
-lab:enrolledIn a rdf:Property ;
+ex:enrolledIn a rdf:Property ;
     rdfs:label "enrolled in" ;
     rdfs:comment "Relates a person to a course they are enrolled in." ;
     rdfs:domain lab:Person ;
