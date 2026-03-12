@@ -16,7 +16,12 @@
     ex:hasCondition ex:torn_acl ;
     ex:worksAt wd:Q15881312 ;
     ex:enrolledIn <#knowledge-graphs-2025> ;
-    foaf:knows <#TianTang> , wd:Q66736299;
+    foaf:knows <#TianTang> , wd:Q66736299,
+        <https://www.tabulas.eu/ward>, 
+        <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#me>, 
+        <https://tiantangvanhoecke.github.io/KG_Lab2/data.ttl#me>,
+        <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl#me>,
+        <https://hannevanoutrive.github.io/knowledge_graphs/data.ttl#vanoutrive_hanne> ;
     ex:goesToRailwayStationWith wd:Q76645490 .
 
 <#TianTang> a foaf:Person ;
