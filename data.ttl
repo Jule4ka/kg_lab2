@@ -15,6 +15,7 @@
     ex:likes ex:badminton ;
     ex:hasCondition ex:torn_acl ;
     ex:worksAt wd:Q15881312 ;
+    ex:enrolledIn <#knowledge-graphs-2025> ;
     foaf:knows <#TianTang> , wd:Q66736299 ;
     ex:goesToRailwayStationWith wd:Q76645490 .
 
