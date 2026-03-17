@@ -55,7 +55,7 @@ ex:torn_acl a ex:MedicalCondition ;
     ex:depicts         <#me> ;
     ex:title          "Juul enjoying art"@en ;
     ex:cityTaken      wd:Q1715;
-    ex:specificLocationTaken       wd:QQ510144 ;
+    ex:specificLocationTaken       wd:Q510144 ;
     ex:description    "Me in a reconstructed El Lissitzky's 'Cabinet of Abstraction' in the Sprengel Museum in Hannover"@en .
 
 <https://jule4ka.github.io/kg_lab2/img/sportsmen.webp>
