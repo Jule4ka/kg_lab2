@@ -1,5 +1,5 @@
-@prefix foaf: <http://xmlns.com/foaf/0.1/>.
-@prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary.ttl#> .
+
+@base <https://jule4ka.github.io/kg_lab2/vocabulary.ttl> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -7,39 +7,42 @@
 
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix schema: <https://schema.org/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/>.
 #################################################################
 # Classes
 #################################################################
 
-ex:Person a rdfs:Class ;
+<#Person>
+    a rdfs:Class ;
     rdfs:subClassOf foaf:Person ;
     rdfs:label "Person"@en-gb ;
     rdfs:comment "A human being."@en-gb .
 
-ex:Student a rdfs:Class ;
-    rdfs:subClassOf ex:Person ;
+<#Student>
+ a rdfs:Class ;
+    rdfs:subClassOf <#Person> ;
     rdfs:label "Student"@en ;
     rdfs:comment "A person who is enrolled in an educational institution."@en .
 
-lab:Course a rdfs:Class ;
+<#Course> 
+    a rdfs:Class ;
     rdfs:label "Course" ;
     rdfs:comment "A course offered at an educational institution." .
 
-
-ex:City a rdfs:Class ;
+<#City> a rdfs:Class ;
     rdfs:label "City"@en ;
     rdfs:comment "A large human settlement."@en .
 
-ex:Organization a rdfs:Class ;
+<#Organization> a rdfs:Class ;
     rdfs:subClassOf foaf:Organization ;
     rdfs:label "Organization"@en ;
     rdfs:comment "An organization such as a company or government institution."@en .
 
-ex:Activity a rdfs:Class ;
+<#Activity> a rdfs:Class ;
     rdfs:label "Activity"@en ;
     rdfs:comment "An activity that a person can like or practice."@en .
 
-ex:MedicalCondition a rdfs:Class ;
+<#MedicalCondition> a rdfs:Class ;
     rdfs:label "Medical condition"@en ;
     rdfs:comment "A health-related condition affecting a person."@en .
 
@@ -48,77 +51,128 @@ ex:MedicalCondition a rdfs:Class ;
 # Properties
 #################################################################
 
-foaf:firstName a rdf:Property ;
-    rdfs:label "first name"@en ;
-    rdfs:comment "The first name of a person."@en ;
-    rdfs:domain foaf:Person ;
-    rdfs:range xsd:string .
-
-foaf:familyName a rdf:Property ;
-    rdfs:label "family name"@en ;
-    rdfs:comment "The family name of a person."@en ;
-    rdfs:domain foaf:Person ;
-    rdfs:range xsd:string .
-
-ex:location a rdf:Property ;
+<#location>
+    a rdf:Property ;
     rdfs:label "location"@en ;
     rdfs:comment "Indicates the city where a person is located."@en ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:City .
+    rdfs:domain <#Person> ;
+    rdfs:range <#City> .
 
-ex:likes a rdf:Property ;
+<#likes> a rdf:Property ;
     rdfs:label "likes"@en ;
     rdfs:comment "Indicates an activity that a person likes."@en ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:Activity .
+    rdfs:domain <#Person> ;
+    rdfs:range <#Activity> ;
+    rdfs:subPropertyOf foaf:topic_interest.
 
-ex:hasCondition a rdf:Property ;
+
+<#hasCondition> a rdf:Property ;
     rdfs:label "has medical condition"@en ;
     rdfs:comment "Relates a person to a medical condition."@en ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:MedicalCondition .
+    rdfs:domain <#Person>  ;
+    rdfs:range <#MedicalCondition> .
 
-ex:worksAt a rdf:Property ;
+<#worksAt> a rdf:Property ;
     rdfs:label "works at"@en ;
     rdfs:comment "Relates a person to the organization where they work."@en ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:Organization .
+    rdfs:domain <#Person> ;
+    rdfs:range <#Organization> .
 
-foaf:knows a rdf:Property ;
+<#knows> a rdf:Property ;
     rdfs:label "knows"@en ;
     rdfs:label "kent"@nl ;
     rdfs:comment "Indicates a person known by another person."@en ;
     rdfs:comment "Вказує на людину, яку знає інша людина."@ua ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:Person .
+    rdfs:domain <#Person> ;
+    rdfs:range <#Person> ;
+    rdfs:subPropertyOf foaf:knows .
 
-ex:goesToRailwayStationWith a rdf:Property ;
+
+<#goesToRailwayStationWith> a rdf:Property ;
     rdfs:label "goes to railway station with"@en ;
     rdfs:comment "Indicates a person with whom someone goes to the railway station."@en ;
-    rdfs:domain ex:Person ;
-    rdfs:range ex:Person .
+    rdfs:domain <#Person>;
+    rdfs:range <#Person> .
 
-ex:surface a rdf:Property ;
+<#surface> a rdf:Property ;
     rdfs:label "surface area"@en ;
     rdfs:comment "The surface area of a city expressed in square kilometers."@en ;
-    rdfs:domain ex:City ;
+    rdfs:domain <#City> ;
     rdfs:range xsd:decimal .
 
-ex:name a rdf:Property ;
+<#name> a rdf:Property ;
     rdfs:label "name" ;
     rdfs:comment "The name of a something." ;
     rdfs:domain rdfs:Resource ;
     rdfs:range rdfs:Literal ;
-    owl:equivalentProperty schema:name .
+    owl:equivalentProperty schema:name ;
+    rdfs:subPropertyOf foaf:name .
 
-ex:seeAlso a rdf:Property ;
+<#seeAlso> a rdf:Property ;
     rdfs:label "see also" ;
     rdfs:comment "Relates a resource to another resource that describes the same thing." ;
     rdfs:domain rdfs:Resource ;
     rdfs:range rdfs:Resource .
 
-ex:enrolledIn a rdf:Property ;
+<#enrolledIn> a rdf:Property ;
     rdfs:label "enrolled in" ;
     rdfs:comment "Relates a person to a course they are enrolled in." ;
-    rdfs:domain lab:Person ;
-    rdfs:range lab:Course .
+    rdfs:domain <#Person> ;
+    rdfs:range <#Course> ;
+    rdfs:subPropertyOf foaf:member .
+
+<#mbti> a rdf:Property ;
+    rdfs:label "MBTI personality type"@en ;
+    rdfs:comment "Relates a person to their MBTI personality type."@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf foaf:myersBriggs.
+
+
+#################################################################
+# Lab4 addition
+#################################################################
+
+<#Photo> 
+    a               rdf:Class ;
+    rdfs:subClassOf foaf:Image ;
+    rdfs:label      "photograph"@en ;
+    rdfs:comment    "A two-dimensional visual representation of a moment captured using a camera."@en .
+
+<#Creator>
+    a               rdf:Property ;
+    rdfs:label      "creator"@en ;
+    rdfs:comment    "The author of the photography."@en ;
+    rdfs:domain     <#Photo> ;
+    rdfs:range      <#Person> ;
+    rdfs:subPropertyOf foaf:maker .
+
+<#Depicts>
+    a               rdf:Property ;
+    rdfs:label      "depicts"@en ;
+    rdfs:comment    "Someone depicted in the photography."@en ;
+    rdfs:domain     <#Photo> ;
+    rdfs:range      <#Person> ;
+    rdfs:subPropertyOf foaf:depicts.
+
+<#SpecificLocationTaken>
+    a               rdf:Property ;
+    rdfs:label      "Specific location taken"@en ;
+    rdfs:comment    "The specific place where the photography was taken."@en ;
+    rdfs:domain     <#Photo> ;
+    rdfs:range      <#Location> .
+
+<#CityTaken>
+    a               rdf:Property ;
+    rdfs:label      "City taken"@en ;
+    rdfs:comment    "The city where the photography was taken."@en ;
+    rdfs:domain     <#Photo> ;
+    rdfs:range      <#Location> .
+
+<#Title>
+    a               rdf:Property ;
+    rdfs:label      "title"@en ;
+    rdfs:comment    "The title or name of the photography."@en ;
+    rdfs:domain     <#Photo> ;
+    rdfs:range      xsd:string ;
+    rdfs:subPropertyOf foaf:name .

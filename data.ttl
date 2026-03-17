@@ -7,10 +7,10 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <#me> a foaf:Person , ex:Student ;
-    foaf:firstName "Julia" ;
-    foaf:familyName "Paranich" ;
-    schema:name "Julia Paranich" ;
     foaf:name "Julia Paranich" ;
+    schema:name "Julia Paranich" ;
+    ex:name "Julia Paranich" ;
+    ex:mbti "eNfP" ;
     ex:location wd:Q1764 ;
     ex:likes ex:badminton ;
     ex:hasCondition ex:torn_acl ;
@@ -24,11 +24,11 @@
         <https://hannevanoutrive.github.io/knowledge_graphs/data.ttl#vanoutrive_hanne> ;
     ex:goesToRailwayStationWith wd:Q76645490 .
 
-<#TianTang> a foaf:Person ;
+<#TianTang> a ex:Person ;
     foaf:firstName "Tian" ;
     foaf:familyName "Tang" .
 
-wd:Q76645490 a foaf:Person , ex:Student ;
+wd:Q76645490 a ex:Person , ex:Student ;
     foaf:firstName "Seppe" ;
     foaf:familyName "Santens" .
 
@@ -36,7 +36,7 @@ wd:Q1764 a ex:City ;
     rdfs:label "Рейк'явік"@uk ;
     ex:surface "244"^^xsd:decimal .
 
-wd:Q15881312 a foaf:Organization ;
+wd:Q15881312 a ex:Organization ;
     rdfs:label "Rijksdienst voor Ondernemend Nederland"@nl .
 
 ex:badminton a ex:Activity ;
@@ -48,3 +48,31 @@ ex:torn_acl a ex:MedicalCondition ;
 <#knowledge-graphs-2025> a ex:Course ;
     ex:name "Knowledge Graphs 2025" ;
     ex:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
+
+
+<https://jule4ka.github.io/kg_lab2/img/juul.jfif>
+    a                 ex:Photo ;
+    ex:depicts         <#me> ;
+    ex:title          "Juul enjoying art"@en ;
+    ex:cityTaken      wd:Q1715;
+    ex:specificLocationTaken       wd:QQ510144 ;
+    ex:description    "Me in a reconstructed El Lissitzky's 'Cabinet of Abstraction' in the Sprengel Museum in Hannover"@en .
+
+<https://jule4ka.github.io/kg_lab2/img/sportsmen.webp>
+    a                 ex:Photo ;
+    ex:title          "Спотрсмены"@ru ;
+    ex:description    "Photo of a painting 'Sportsmen' (1931) by Kazimir Malevich"@en .
+
+<https://jule4ka.github.io/kg_lab2/img/boogie.jpg>
+    a                 ex:Photo ;
+    ex:title          "Victory Boogie Woogie"@en ;
+    ex:description    "Photo of a painting 'Victory Boogie Woogie' (1942-1944) by Piet Mondrian"@en .
+
+
+<https://jule4ka.github.io/kg_lab2/img/whitten.jpg>
+    a                 ex:Photo ;
+    ex:title          "Atopolis: For Édouard Glissant"@en ;
+    ex:cityTaken      wd:Q60;
+    ex:specificLocationTaken       wd:Q188740 ;
+    ex:creator         <#me> ;
+    ex:description    "Photo of a painting 'Atopolis: For Édouard Glissant' (2015) by Jack Whitten"@en .
