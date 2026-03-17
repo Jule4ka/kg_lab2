@@ -69,7 +69,7 @@ ex:torn_acl a ex:MedicalCondition ;
     ex:description    "Photo of a painting 'Victory Boogie Woogie' (1942-1944) by Piet Mondrian"@en .
 
 
-<https://jule4ka.github.io/kg_lab2/img/whitten.jpg>
+<https://jule4ka.github.io/kg_lab2/img/whitten.JPEG>
     a                 ex:Photo ;
     ex:title          "Atopolis: For Édouard Glissant"@en ;
     ex:cityTaken      wd:Q60;
