@@ -1,12 +1,12 @@
-@base <https://jule4ka.github.io/kg_lab2/data.ttl> .
 @prefix ex: <https://jule4ka.github.io/kg_lab2/vocabulary.ttl#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix schema: <https://schema.org/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix wd: <http://www.wikidata.org/entity/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://jule4ka.github.io/kg_lab2/data.ttl#> .
 
-<#me> a foaf:Person , ex:Student ;
+:me a foaf:Person , ex:Student ;
     foaf:name "Julia Paranich" ;
     schema:name "Julia Paranich" ;
     ex:name "Julia Paranich" ;
@@ -39,13 +39,13 @@ wd:Q1764 a ex:City ;
 wd:Q15881312 a ex:Organization ;
     rdfs:label "Rijksdienst voor Ondernemend Nederland"@nl .
 
-ex:badminton a ex:Activity ;
+:badminton a ex:Activity ;
     rdfs:label "Badminton"@en .
 
-ex:torn_acl a ex:MedicalCondition ;
+:torn_acl a ex:MedicalCondition ;
     rdfs:label "Torn ACL"@en .
 
-<#knowledge-graphs-2025> a ex:Course ;
+:knowledge-graphs-2025 a ex:Course ;
     ex:name "Knowledge Graphs 2025" ;
     ex:seeAlso <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
 
