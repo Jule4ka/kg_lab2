@@ -77,3 +77,15 @@ ex:torn_acl a ex:MedicalCondition ;
     ex:specificLocationTaken       wd:Q188740 ;
     ex:creator         <#me> ;
     ex:description    "Photo of a painting 'Atopolis: For Édouard Glissant' (2015) by Jack Whitten"@en .
+
+
+<https://jule4ka.github.io/kg_lab2/img/lady.JPEG> 
+    a ex:Image ;
+    ex:title "Neuschwanstein Castle"^^xsd:string ;
+    ex:creator <#me>;
+    ex:depicts _:female_fruit_trader ;
+    ex:cityTaken wd:Q1854 ;
+    ex:description "Somebody selling fruit in Vietnam."^^xsd:string .
+
+_:female_fruit_trader a ex:Person ;
+    ex:name "A woman selling fruit."^^xsd:string .
