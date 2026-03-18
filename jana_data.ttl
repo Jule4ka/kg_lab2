@@ -1,0 +1,127 @@
+@base <https://janaverl.github.io/knowledge_graphs_lab2/0001.ttl> .
+
+@prefix voc:    <https://janaverl.github.io/knowledge_graphs_lab2/vocabulary.ttl#> .
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:    <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <https://schema.org/> .
+@prefix wd:     <https://www.wikidata.org/wiki/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/> .
+
+
+# .__        ___.     ________  
+# |  | _____ \_ |__   \_____  \ 
+# |  | \__  \ | __ \   /  ____/ 
+# |  |__/ __ \| \_\ \ /       \ 
+# |____(____  /___  / \_______ \
+#          \/    \/          \/
+
+
+<#me>
+    voc:name                        "Jana Verlinde"^^xsd:string ;
+    a                               voc:Person , voc:Student ;
+    voc:student-enrolment-type      voc:Micro-credential-student ;
+    voc:e-mail                      "jana.verlinde@ugent.be"^^xsd:string ;
+    voc:favorite-drink              voc:Coffee ;
+    voc:hobby                       voc:Running ;
+    voc:knows                       <https://hannevanoutrive.github.io/knowledge_graphs/data.ttl#vanoutrive_hanne> ,
+                                    <https://federickds.github.io/knowledge_graphs/data.ttl#me> ,
+                                    <https://lander6.github.io/knowledge-graph-assignment/data.ttl#Lander> ,
+                                    <https://seppesantens.github.io/rdf-lab2/data.ttl#me> ,
+                                    <https://tdhulster.github.io/knowledge-graphs-ugent-2026/profile.ttl#me> ,
+                                    <https://daniel1402.github.io/knowledge-graphs-labs/data.ttl#me> ,
+                                    <https://pikajojo.github.io/Knowledge_Graph_UGent_Lab2/data.ttl#me> ,
+                                    <https://jule4ka.github.io/kg_lab2/data.ttl#me> ,
+                                    <https://tabulas.eu/ward/profile.ttl#me>
+                                    .
+
+<#jana>
+    owl:sameAs                     <#me> .
+
+# .__        ___.     ________  
+# |  | _____ \_ |__   \_____  \ 
+# |  | \__  \ | __ \    _(__  < 
+# |  |__/ __ \| \_\ \  /       \
+# |____(____  /___  / /______  /
+#           \/    \/         \/ 
+
+<#me>
+    voc:enrolledIn                  <#knowledge-graphs-2025> ;
+    schema:course                   <https://www.ugain.ugent.be/MCKG2026.htm> .
+
+<#knowledge-graphs-2025> 
+    a                               voc:Course ;
+    voc:name                        "Knowledge Graphs 2025" ;
+    rdfs:seeAlso                    <https://studiekiezer.ugent.be/studiefiche/nl/E018160/2025> .
+
+
+# .__        ___.        _____       
+# |  | _____ \_ |__     /  |  |    
+# |  | \__  \ | __ \   /   |  |_   
+# |  |__/ __ \| \_\ \ /    ^   /  
+# |____(____  /___  / \____   |  
+#           \/    \/       |__|      
+
+<#img-001>
+    a                               voc:Img ;
+    voc:imageURL                    <https://janaverl.github.io/knowledge_graphs_lab2/img/001.jpg>;
+    voc:name                        "locker n° 53"@en ;
+    voc:photographer                <#me> ;
+    voc:shooting-location           <#gym-locker-room> ;
+    voc:description                 "A locker in a changing room. It has a digital keypad and the number 53 above it."@en .
+
+<#img-002>
+    a                               voc:Img ;
+    voc:imageURL                    <https://janaverl.github.io/knowledge_graphs_lab2/img/002.jpg>;
+    voc:name                        "bicycle parking block n° 41"@en ;
+    voc:photographer                <#me> ;
+    voc:shooting-location           wd:Q800814 ;
+    voc:description                 "An indoor bike parking area with two‑tier racks full of bicycles, and a cabinet marked 41 in the foreground with a bag placed in front of it."@en .
+
+<#img-003>
+    a                               voc:Img ;
+    voc:imageURL                    <https://janaverl.github.io/knowledge_graphs_lab2/img/003.jpg>;
+    voc:name                        "race bib n° 13"@en ;
+    voc:photographer                <#me> ;
+    voc:portrays                    <#me> ;
+    voc:shooting-location           wd:Q498639 ;
+    voc:description                 "Jana wears a race bib with the unlucky number 13. The race is a part of 'Loopcriterium van de Kust'."@en .
+
+<#img-004>
+    a                               voc:Img ;
+    voc:imageURL                    <https://janaverl.github.io/knowledge_graphs_lab2/img/004.jpg> ;
+    voc:name                        "locker n° 14"@en ;
+    voc:photographer                <#me> ;
+    voc:shooting-location           wd:Q2358158 ;
+    voc:description                 "A locker in the cloakroom of the museum 'Huis van Alijn' in Ghent. It has a keypad and the number 14 above it."@en .
+
+<#img-005>
+    a                               voc:Img ;
+    voc:imageURL                    <https://commons.wikimedia.org/wiki/File:Laurel_%26_Hardy_in_Flying_Deuces_1_edited.png#/media/File:Laurel_&_Hardy_in_Flying_Deuces_1_edited.png> ;
+    voc:name                        "Laurel & Hardy in Flying Deuces"@en ;
+    voc:portrays                    <#OliverHardy> ;
+    voc:portrays                    <#StanLaurel> ;
+    voc:description                 "Image of Laurel & Hardy in Flying Deuces."@en ;
+    rdfs:seeAlso                     <https://commons.wikimedia.org/wiki/File:Laurel_%26_Hardy_in_Flying_Deuces_1_edited.png> ;
+    rdfs:seeAlso                     wd:Q33497 .
+
+
+<#gym-locker-room>
+    voc:name        "A gym locker room somewhere in Ghent."@en ;
+    a               voc:Location ;
+    a               wd:Q1070054 .
+
+wd:Q800814      a   voc:Location .
+wd:Q498639      a   voc:Location .
+wd:Q2358158     a   voc:Location .
+
+
+<#OliverHardy> 
+    a               voc:Person ;
+    voc:name        "Oliver Hardy" ;
+    owl:sameAs      wd:Q72911 .
+
+<#StanLaurel>
+    a               voc:Person ;
+    voc:name        "Stan Laurel" ;
+    owl:sameAs      wd:Q72869 .

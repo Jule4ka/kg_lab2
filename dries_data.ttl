@@ -1,0 +1,92 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#>.
+@prefix dv: <https://driesver.github.io/ugent-knowledge-graphs/vocabulary.ttl#>.
+@prefix ex: <https://driesver.github.io/ugent-knowledge-graphs/data_lab2.ttl#>.
+@prefix olivier: <https://raw.githubusercontent.com/olivierdm/itsme/refs/heads/main/profile.ttl#>.
+@prefix francisco: <https://papichickens.github.io/data.ttl#>.
+
+## --- Topics ---
+
+ex:cloud a dv:Topic .
+ex:knowledge_graphs a dv:Topic .
+
+## --- People ---
+
+ex:me a dv:Student ;
+    dv:name "Dries Verhoeve"^^xsd:string;
+    dv:emailAddress <mailto:dries@ugent.be>;
+    dv:phoneNumber <tel:+32123456789>;
+    dv:studentID "02109999"^^xsd:string;
+    dv:yearOfStudy "5"^^xsd:integer;
+    dv:interestedIn ex:cloud,
+                    ex:knowledge_graphs;
+    dv:knows olivier:me,
+             francisco:me,
+             ex:xander_boudry.
+
+olivier:me a dv:Student;
+    dv:name "Olivier De Meyst"^^xsd:string.
+
+francisco:me a dv:Student;
+    dv:name "Francisco Pimentel Alves"^^xsd:string.
+
+ex:xander_boudry a dv:Person;
+    dv:name "Xander Boudry"^^xsd:string.
+
+ex:fux a dv:Person;
+    dv:name "Jonatan Fux"^^xsd:string.
+
+ex:pieter_colpaert a dv:Person;
+    dv:name "Pieter Colpaert"^^xsd:string.
+
+ex:jan a dv:Person;
+    dv:name "Jan Jansens"^^xsd:string.
+
+_:unknown_paraglider a dv:Person ;
+    dv:name "Unknown paraglider"^^xsd:string .
+
+# --- Locations ---
+
+ex:ntgent a dv:Location;
+    dv:title "Stadstheater NTGent"^^xsd:string;
+    dv:latitude "51.053731637732085"^^xsd:decimal ;
+    dv:longitude "3.7257935911197704"^^xsd:decimal .
+
+ex:landing_whale a dv:Location;
+    dv:title "Whale landing in Tenerife"^^xsd:string;
+    dv:latitude "28.381002468816536"^^xsd:decimal ;
+    dv:longitude "-16.815389327057137"^^xsd:decimal .
+
+ex:marienbrucke a dv:Location;
+    dv:title "Marienbrücke"^^xsd:string ;
+    dv:latitude "47.55510262869201"^^xsd:decimal ;
+    dv:longitude "10.749629666180555"^^xsd:decimal .
+
+# --- Images ---
+
+<https://vtk.ugent.be/media/thumbs/external/praesides_photos/praesidiumfoto2425.jpg.420x594_q85_crop-smart_upscale.jpg> a dv:Image ;
+    dv:title "Photo of Dries Verhoeve"^^xsd:string ;
+    dv:author ex:fux;
+    dv:depicts ex:me ; 
+    dv:takenAt ex:ntgent ;
+    dv:description "Image of Dries Verhoeve, Praeses of VTK Gent in 2024-2025. The person is dressed in formal wear with a traditional student sash showing his function."^^xsd:string .
+
+<https://pietercolpaert.be/img/pc.jpg>  a dv:Image ;
+    dv:title "Headshot of Pieter Colpaert"^^xsd:string ;
+    dv:author _:unknown_author ;
+    dv:depicts ex:pieter_colpaert ; 
+    dv:takenAt _:unknown_location ;
+    dv:description "Headshot of Pieter Colpaert that is used on his personal website."^^xsd:string .
+
+<https://driesver.github.io/ugent-knowledge-graphs/paraglide.jpg> a dv:Image ;
+    dv:title "Paraglide"^^xsd:string ;
+    dv:author ex:jan;
+    dv:depicts ex:me ;
+    dv:takenAt ex:landing_whale;
+    dv:description "A paraglider prepares for landing on a grassy, rocky slope, with a large white and orange wing fully inflated overhead. In the background, rugged mountains stretch beneath a heavy, overcast sky, while a second glider is visible in the distance."^^xsd:string .
+
+<https://driesver.github.io/ugent-knowledge-graphs/neuschwanstein.jpg> a dv:Image ;
+    dv:title "Neuschwanstein Castle"^^xsd:string ;
+    dv:author ex:me;
+    dv:depicts _:unknown_paraglider ;
+    dv:takenAt ex:marienbrucke ;
+    dv:description "Neuschwanstein Castle stands majestically atop a forested hill, its white limestone towers contrasting against a sprawling Bavarian valley and distant blue lakes. An orange paraglider drifts through the overcast sky in the upper right, adding a sense of scale to the vast, fairytale-like landscape."^^xsd:string .

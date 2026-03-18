@@ -1,0 +1,137 @@
+@base <https://driesver.github.io/ugent-knowledge-graphs/vocabulary.ttl> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
+
+## --- Classes ---
+
+<#Person> a rdfs:Class ;
+    rdfs:label "Person"@en ;
+    rdfs:comment "An individual human being."@en ;
+    owl:equivalentClass foaf:Person .
+
+<#Student> a rdfs:Class ;
+    rdfs:subClassOf <#Person> ;
+    rdfs:label "Student"@en ;
+    rdfs:comment "A person enrolled in an educational program."@en .
+
+<#Topic> a rdfs:Class ;
+    rdfs:label "Topic"@en ;
+    rdfs:comment "A subject or field of interest."@en ;
+    owl:equivalentClass skos:Concept .
+
+<#Image> a rdfs:Class ;
+    rdfs:label "Image"@en ;
+    rdfs:label "Picture"@en ;
+    rdfs:comment "A digital representation of a picture made using a camera, in which an image is focused on to light-sensitive sensor and then stored digitally."@en ;
+    owl:equivalentClass foaf:Image .
+
+<#Location> a rdfs:Class ;
+    rdfs:label "Location"@en ;
+    rdfs:comment "A specific geographic place."@en ;
+    owl:equivalentClass schema:Place .
+
+## --- Properties ---
+
+<#name> a rdf:Property ;
+    rdfs:label "Name"@en ;
+    rdfs:comment "The full name of a person."@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf foaf:name .
+
+<#emailAddress> a rdf:Property ;
+    rdfs:label "E-mailaddress"@en ;
+    rdfs:comment "An electronic mail address used for communication. Use this with an IRI formatted as <mailto:example@example.org>"@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range rdfs:Resource ;
+    owl:equivalentProperty foaf:mbox .
+
+<#phoneNumber> a rdf:Property ;
+    rdfs:label "Phone number"@en ;
+    rdfs:comment "A numerical sequence used to contact a person via telephone. Use this with an IRI formatted as <tel:+00123456789>"@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range rdfs:Resource ;
+    owl:equivalentProperty foaf:phone .
+
+<#studentID> a rdf:Property ;
+    rdfs:label "StudentID"@en ;
+    rdfs:comment "A unique identifier assigned to a student by an educational institution."@en ;
+    rdfs:domain <#Student> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:identifier .
+
+<#yearOfStudy> a rdf:Property ;
+    rdfs:label "Year of Study"@en ;
+    rdfs:comment "The current academic year in which the student is enrolled."@en ;
+    rdfs:domain <#Student> ;
+    rdfs:range xsd:integer ;
+    rdfs:subPropertyOf schema:educationalLevel .
+
+<#interestedIn> a rdf:Property ;
+    rdfs:label "Interested in"@en ;
+    rdfs:comment "A topic or field that a person has an interest in."@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range <#Topic> ;
+    owl:equivalentProperty foaf:topic_interest .
+
+<#knows> a rdf:Property ;
+    rdfs:label "knows"@en ;
+    rdfs:comment "A person known by this person, indicating some level of reciprocated interaction."@en ;
+    rdfs:domain <#Person> ;
+    rdfs:range <#Person> ;
+    owl:equivalentProperty foaf:knows .
+
+<#title> a rdf:Property ;
+    rdfs:label "title"@en ;
+    rdfs:comment "The title of a thing."@en ;
+    rdfs:domain rdfs:Resource ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf foaf:name .
+
+<#author> a rdf:Property ;
+    rdfs:label "author"@en ;
+    rdfs:comment "The person who took the photo."@en ;
+    rdfs:domain <#Image> ;
+    rdfs:range <#Person> ;
+    rdfs:subPropertyOf schema:author .
+
+<#depicts> a rdf:Property ;
+    rdfs:label "depicts"@en ;
+    rdfs:comment "Identifies a person shown in an image."@en ;
+    rdfs:domain <#Image> ;
+    rdfs:range <#Person> ;
+    rdfs:subPropertyOf foaf:depicts .
+
+<#takenAt> a rdf:Property ;
+    rdfs:label "taken at"@en ;
+    rdfs:comment "The location where the image was taken."@en ;
+    rdfs:domain <#Image> ;
+    rdfs:range <#Location> ;
+    rdfs:subPropertyOf schema:contentLocation .
+
+<#description> a rdf:Property ;
+    rdfs:label "description"@en ;
+    rdfs:comment "A summary of the image's content."@en ;
+    rdfs:domain <#Image> ;
+    rdfs:range xsd:string ;
+    rdfs:subPropertyOf schema:description .
+
+<#latitude> a rdf:Property ;
+    rdfs:label "latitude"@en ;
+    rdfs:comment "The latitude of a location."@en ;
+    rdfs:domain <#Location> ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty geo:lat .
+
+<#longitude> a rdf:Property ;
+    rdfs:label "longitude"@en ;
+    rdfs:comment "The longitude of a location."@en ;
+    rdfs:domain <#Location> ;
+    rdfs:range xsd:decimal ;
+    owl:equivalentProperty geo:long .
